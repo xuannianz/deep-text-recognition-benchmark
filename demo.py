@@ -18,6 +18,7 @@ def demo(opt):
         converter = CTCLabelConverter(opt.character)
     else:
         converter = AttnLabelConverter(opt.character)
+    # ctc 加上了 [black], attention 加上了 [GO], [s]
     opt.num_class = len(converter.character)
 
     if opt.rgb:
